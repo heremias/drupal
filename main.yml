@@ -7,7 +7,7 @@
     base_image: debian:buster
     container_name: php_apache_build_container
     image_namespace: heremias
-    image_name: php-apache
+    image_name: apache-php
 
     # Apache settings.
     apache_remove_default_vhost: yes
