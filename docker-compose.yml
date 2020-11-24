@@ -2,9 +2,9 @@
 version: "3"
 
 services:
-  php-apache:
-    image: heremias/php-apache:latest
-    container_name: php-apache
+  apache-php:
+    image: heremias/apache-php:latest
+    container_name: apache-php
     ports:
       - "80:80"
     restart: always
