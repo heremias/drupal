@@ -3,7 +3,6 @@ language: python
 services: docker
 
 env:
-  - php_version: '7.4'
   - php_version: '7.3'
 
 install:
