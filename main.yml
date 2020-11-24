@@ -61,19 +61,19 @@
       delegate_to: '{{ container_name }}'
 
   roles:
-    - name: heremias.apache
+    - name: geerlingguy.apache
       delegate_to: '{{ container_name }}'
 
-    - name: heremias.php-versions
+    - name: geerlingguy.php-versions
       delegate_to: '{{ container_name }}'
 
-    - name: heremias.php
+    - name: geerlingguy.php
       delegate_to: '{{ container_name }}'
 
-    - name: heremias.php-mysql
+    - name: geerlingguy.php-mysql
       delegate_to: '{{ container_name }}'
 
-    - name: heremias.composer
+    - name: geerlingguy.composer
       delegate_to: '{{ container_name }}'
 
   post_tasks:
