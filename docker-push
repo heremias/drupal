@@ -1,23 +1,23 @@
 #!/bin/bash
-# Push container image to geerlingguy.php-apache Docker Hub repository.
+# Push container image to heremias/apache-php Docker Hub repository.
 
 # Log into Docker Hub.
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 # Push $php_version tag.
-docker push heremias/php-apache:${php_version}
+docker push heremias/apache-php:${php_version}
 
 # Push $php_version + '.x' tag.
-docker tag heremias/php-apache:${php_version} geerlingguy/php-apache:${php_version}.x
-docker push heremias/php-apache:${php_version}.x
+docker tag heremias/apache-php:${php_version} heremias/apache-php:${php_version}.x
+docker push heremias/apache-php:${php_version}.x
 
 # Push $php_version + '.PHP_RELEASE_VERSION' tag.
-php_release_version=$(docker run --rm heremias/php-apache:${php_version} bash -c "php -r 'echo PHP_RELEASE_VERSION;'")
-docker tag heremias/php-apache:${php_version} heremias/php-apache:${php_version}.${php_release_version}
-docker push heremias/php-apache:${php_version}.${php_release_version}
+php_release_version=$(docker run --rm heremias/apache-php:${php_version} bash -c "php -r 'echo PHP_RELEASE_VERSION;'")
+docker tag heremias/apache-php:${php_version} heremias/apache-php:${php_version}.${php_release_version}
+docker push heremias/apache-php:${php_version}.${php_release_version}
 
 # Push latest tag if building latest version.
 if [[ "$php_version" == "7.4" ]]; then
-  docker tag heremias/php-apache:${php_version} heremias/php-apache:latest
-  docker push heremias/php-apache:latest
+  docker tag heremias/apache-php:${php_version} heremias/apache-php:latest
+  docker push heremias/apache-php:latest
 fi
