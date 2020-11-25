@@ -1,5 +1,5 @@
 #!/bin/bash
-# Push container image to heremias/apache-php Docker Hub repository.
+# Push container image to heremias/apache-php Docker Hub repository boom.
 
 # Log into Docker Hub.
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
