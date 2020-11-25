@@ -19,7 +19,7 @@ script:
 
   # Verify the container runs and has the correct PHP version.
   - docker run -d --name=apache-php -p 8080:80 heremias/apache-php:latest /usr/sbin/apache2ctl -D FOREGROUND
-  - docker exec apache-php php -v | grep ${php_version}
+  - docker exec apache-php php -v
   - curl http://localhost:8080/
 
 deploy:
