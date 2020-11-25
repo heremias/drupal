@@ -11,15 +11,15 @@ install:
   - export ANSIBLE_FORCE_COLOR=true
 
   # Install role dependencies.
-  - ansible-galaxy install -r requirements.yml
+  # - ansible-galaxy install -r requirements.yml
 
 script:
   # Build the container.
-  - ansible-playbook --extra-vars="@vars/7.3.yml" main.yml
+  # - ansible-playbook --extra-vars="@vars/7.3.yml" main.yml
 
   # Verify the container runs and has the correct PHP version.
-  - docker run -d --name=apache-php -p 8080:80 heremias/apache-php:latest /usr/sbin/apache2ctl -D FOREGROUND
-  - docker exec apache-php php -v
+  - docker run -d --name=drupal -p 8080:80 drupal:latest /usr/sbin/apache2ctl -D FOREGROUND
+  - docker exec drupal php -v
   - curl http://localhost:8080/
 
 deploy:
