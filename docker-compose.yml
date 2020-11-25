@@ -3,8 +3,8 @@ version: "3"
 
 services:
   apache-php:
-    image: heremias/apache-php:latest
-    container_name: apache-php
+    image: heremias/drupal:latest
+    container_name: drupal
     ports:
       - "80:80"
     restart: always
