@@ -64,7 +64,7 @@
     - name: heremias.apache
       delegate_to: '{{ container_name }}'
 
-    - name: heremias.php-versions
+    - name: heremias.php_versions
       delegate_to: '{{ container_name }}'
 
     - name: heremias.php
