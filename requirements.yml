@@ -1,5 +1,5 @@
 ---
 - src: heremias.apache
 - src: heremias.php
-- src: heremias.php-mysql
+- src: heremias.php_mysql
 - src: heremias.composer
